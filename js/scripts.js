@@ -51,18 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  function updateNepalTime() {
-    const now = new Date();
-    const nepal = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kathmandu" }));
-    const el = document.getElementById("nepalClock");
-    if (el) el.textContent = nepal.toLocaleTimeString();
+function updateNepalTime() {
+  const now = new Date();
+
+  const nepal = new Date(
+    now.toLocaleString("en-US", { timeZone: "Asia/Kathmandu" })
+  );
+
+  const timeEl = document.getElementById("nepalClock");
+  const dateEl = document.getElementById("nepalDate");
+
+  if (timeEl) {
+    timeEl.textContent = nepal.toLocaleTimeString();
   }
 
-  function updateUserTime() {
-    const now = new Date();
-    const el = document.getElementById("userClock");
-    if (el) el.textContent = now.toLocaleTimeString();
+  if (dateEl) {
+    dateEl.textContent = nepal.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   }
+}
+
+function updateUserTime() {
+  const now = new Date();
+
+  const timeEl = document.getElementById("userClock");
+  const dateEl = document.getElementById("userDate");
+
+  if (timeEl) {
+    timeEl.textContent = now.toLocaleTimeString();
+  }
+
+  if (dateEl) {
+    dateEl.textContent = now.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
+}
 
   updateNepalTime();
   updateUserTime();
