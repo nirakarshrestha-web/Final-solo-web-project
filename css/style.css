@@ -290,15 +290,23 @@ a {
 }
 
 @media (max-width: 900px) {
-  .hero-content,
   .grid-3 {
     grid-template-columns: 1fr;
   }
 
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-icon {
+    font-size: 32px;
+  }
+}
+
   .hero h1 {
     font-size: 2.1rem;
   }
-}
+
 
 @media (max-width: 768px) {
   .menu-toggle {
