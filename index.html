@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nirakar | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <h2 class="logo">Nirakar</h2>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <h1>Hello, I'm Nirakar 👋</h1>
+          <p>IT Student | Frontend Developer | QA Learner</p>
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Live Clocks</h3>
+          <div class="clock-box">
+            <h4>Nepal Time 🇳🇵</h4>
+            <p id="nepalClock">Loading...</p>
+          </div>
+          <div class="clock-box">
+            <h4>Your Time 🌍</h4>
+            <p id="userClock">Loading...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Welcome to My Portfolio</h2>
+          <p>This website showcases my profile, projects, resume, and contact details in a clean multi-page design.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Nirakar Portfolio</p>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
