@@ -51,49 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
     yearElement.textContent = new Date().getFullYear();
   }
 
-function updateNepalTime() {
-  const now = new Date();
+  function updateNepalTime() {
+    const now = new Date();
 
-  const nepal = new Date(
-    now.toLocaleString("en-US", { timeZone: "Asia/Kathmandu" })
-  );
+    const nepal = new Date(
+      now.toLocaleString("en-US", { timeZone: "Asia/Kathmandu" })
+    );
 
-  const timeEl = document.getElementById("nepalClock");
-  const dateEl = document.getElementById("nepalDate");
+    const timeEl = document.getElementById("nepalClock");
+    const dateEl = document.getElementById("nepalDate");
 
-  if (timeEl) {
-    timeEl.textContent = nepal.toLocaleTimeString();
+    if (timeEl) {
+      timeEl.textContent = nepal.toLocaleTimeString();
+    }
+
+    if (dateEl) {
+      dateEl.textContent = nepal.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
   }
 
-  if (dateEl) {
-    dateEl.textContent = nepal.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+  function updateUserTime() {
+    const now = new Date();
+
+    const timeEl = document.getElementById("userClock");
+    const dateEl = document.getElementById("userDate");
+
+    if (timeEl) {
+      timeEl.textContent = now.toLocaleTimeString();
+    }
+
+    if (dateEl) {
+      dateEl.textContent = now.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
   }
-}
-
-function updateUserTime() {
-  const now = new Date();
-
-  const timeEl = document.getElementById("userClock");
-  const dateEl = document.getElementById("userDate");
-
-  if (timeEl) {
-    timeEl.textContent = now.toLocaleTimeString();
-  }
-
-  if (dateEl) {
-    dateEl.textContent = now.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  }
-}
 
   updateNepalTime();
   updateUserTime();
@@ -102,55 +102,4 @@ function updateUserTime() {
     updateNepalTime();
     updateUserTime();
   }, 1000);
-
-  const contactForm = document.getElementById("contactForm");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const nameError = document.getElementById("nameError");
-      const emailError = document.getElementById("emailError");
-      const messageError = document.getElementById("messageError");
-      const formSuccess = document.getElementById("formSuccess");
-
-      nameError.textContent = "";
-      emailError.textContent = "";
-      messageError.textContent = "";
-      formSuccess.textContent = "";
-
-      let isValid = true;
-
-      if (name === "") {
-        nameError.textContent = "Please enter your name.";
-        isValid = false;
-      }
-
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
-      if (email === "") {
-        emailError.textContent = "Please enter your email.";
-        isValid = false;
-      } else if (!emailPattern.test(email)) {
-        emailError.textContent = "Please enter a valid email.";
-        isValid = false;
-      }
-
-      if (message === "") {
-        messageError.textContent = "Please enter your message.";
-        isValid = false;
-      } else if (message.length < 10) {
-        messageError.textContent = "Message must be at least 10 characters.";
-        isValid = false;
-      }
-
-      if (isValid) {
-        formSuccess.textContent = "Form is working. Email service can be connected later.";
-        contactForm.reset();
-      }
-    });
-  }
 });
