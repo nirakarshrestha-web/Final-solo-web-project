@@ -5,17 +5,17 @@
 }
 
 :root {
-  --bg-color: #ffffff;
-  --text-color: #0f172a;
-  --muted-text: #64748b;
-  --card-bg: #ffffff;
-  --border-color: #e2e8f0;
-  --primary: #2563eb;
-  --hero-bg: linear-gradient(to right, #f8fbff, #eef4ff);
-  --section-bg: #f8fafc;
-  --banner-bg: #f1f5f9;
-  --footer-bg: #0f172a;
-  --footer-text: #ffffff;
+  --bg-color: #f8f3eb;
+  --text-color: #2f2a24;
+  --muted-text: #6b6257;
+  --card-bg: #fffaf3;
+  --border-color: #e6d9c8;
+  --primary: #b07d4f;
+  --hero-bg: linear-gradient(to right, #f7efe4, #f3e7d7);
+  --section-bg: #f5ede2;
+  --banner-bg: #efe3d3;
+  --footer-bg: #3b2f25;
+  --footer-text: #fdf8f2;
 }
 
 body.dark-mode {
